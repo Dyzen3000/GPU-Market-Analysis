@@ -58,9 +58,7 @@ The project uses a small set of metrics that connect market demand to product fi
 | **Rec_GPU**                 | The GPU recommended by the game developer                                         |
 | **Peak CCU**                | Measures the number of active players in-game                                     |
 | **GPU_Performance**         | Defines the performance level required to run the game smoothly                   |
-| **GPU_VRAM**                | Defines the VRAM capacity required by the GPU to avoid performance issues         |
-| **Price-to-Performance**    | Measures hardware value relative to performance                                   |
-| **GPU Fit**                 | Determines whether a GPU satisfies the identified gaming requirements             |
+
 
 Later in the analysis, the P75 of GPU_Performance and VRAM is used for the main recommendation.
 
