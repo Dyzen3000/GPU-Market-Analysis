@@ -53,14 +53,13 @@ The analysis was designed around the decisions different stakeholders would need
 The project uses a small set of metrics that connect market demand to product fit.
 
 | North Star Metric           | Why it matters                                                                                |
-| --------------------------- | --------------------------------------------------------------------------------------------- |
-| **GPU Ownership Share (%)** | Measures the size of the existing hardware market                                             |
-| **Rec_GPU**                 | The GPU Recommended by the game developer                                              
- |
-| **Peak CCU**                | Measures actual player demand for games                                                       |
+|-----------------------------|------------------------------------------------------------------------------------------------|
+| **GPU Ownership Share (%)** | Measures the size of the existing hardware market                                              |
+| **Rec_GPU**                 | The GPU recommended by the game developer                                                      |
+| **Peak CCU**                | Measures actual player demand for games                                                        |
 | **P75 GPU Performance**     | Defines the performance level required to cover the upper 75% of the selected game population |
 | **P75 VRAM**                | Defines the memory capacity required by the upper 75% of the selected game population         |
-| **Price-to-Performance**    | Measures hardware value relative to performance                                               |
+| **Price-to-Performance**    | Measures hardware value relative to performance                                                |
 | **GPU Fit**                 | Determines whether a GPU satisfies the identified gaming requirements                         |
 
 The analysis prioritizes **P75 rather than maximum requirements** for the main recommendation.
