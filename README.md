@@ -55,8 +55,8 @@ The project uses a small set of metrics that connect market demand to product fi
 | North Star Metric           | Why it matters                                                                                |
 | --------------------------- | --------------------------------------------------------------------------------------------- |
 | **GPU Ownership Share (%)** | Measures the size of the existing hardware market                                             |
-| **Rec_GPU** | The GPU Recommended by the game developer                                              
-|
+| **Rec_GPU**                 | The GPU Recommended by the game developer                                              
+ |
 | **Peak CCU**                | Measures actual player demand for games                                                       |
 | **P75 GPU Performance**     | Defines the performance level required to cover the upper 75% of the selected game population |
 | **P75 VRAM**                | Defines the memory capacity required by the upper 75% of the selected game population         |
