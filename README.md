@@ -171,6 +171,7 @@ The first question is not "Which GPU is fastest?"
 It is:
 
 > **Where is the existing customer base?**
+<img width="416" height="367" alt="Screenshot 2026-08-27 002706" src="https://github.com/user-attachments/assets/e325a08a-fa1b-40b7-b7d6-90f039a6e4f2" />
 
 The latest SHS snapshot shows that GPU ownership is concentrated in the mainstream market rather than at the high end.
 
