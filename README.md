@@ -52,17 +52,17 @@ The analysis was designed around the decisions different stakeholders would need
 
 The project uses a small set of metrics that connect market demand to product fit.
 
-| North Star Metric           | Why it matters                                                                                |
-|-----------------------------|------------------------------------------------------------------------------------------------|
-| **GPU Ownership Share (%)** | Measures the size of the existing hardware market                                              |
-| **Rec_GPU**                 | The GPU recommended by the game developer                                                      |
-| **Peak CCU**                | Measures actual player demand for games                                                        |
-| **P75 GPU Performance**     | Defines the performance level required to cover the upper 75% of the selected game population |
-| **P75 VRAM**                | Defines the memory capacity required by the upper 75% of the selected game population         |
-| **Price-to-Performance**    | Measures hardware value relative to performance                                                |
-| **GPU Fit**                 | Determines whether a GPU satisfies the identified gaming requirements                         |
+| North Star Metric           | Why it matters                                                                    |
+|-----------------------------|------------------------------------------------------------------------------------|
+| **GPU Ownership Share (%)** | Measures the size of the existing hardware market                                 |
+| **Rec_GPU**                 | The GPU recommended by the game developer                                         |
+| **Peak CCU**                | Measures the number of active players in-game                                     |
+| **GPU_Performance**         | Defines the performance level required to run the game smoothly                   |
+| **GPU_VRAM**                | Defines the VRAM capacity required by the GPU to avoid performance issues         |
+| **Price-to-Performance**    | Measures hardware value relative to performance                                   |
+| **GPU Fit**                 | Determines whether a GPU satisfies the identified gaming requirements             |
 
-The analysis prioritizes **P75 rather than maximum requirements** for the main recommendation.
+Later in the analysis, the P75 of GPU_Performance and VRAM is used for the main recommendation.
 
 This avoids allowing a small number of extreme titles to determine the hardware recommendation while still targeting the demanding upper portion of the market.
 
@@ -78,14 +78,6 @@ Provides:
 
 * GPU model
 * GPU ownership share
-* GPU class
-* GPU series
-* VRAM
-* performance
-* launch year
-* launch MSRP
-* price-to-performance
-* availability
 * historical SHS dates
 
 ### Game Data
@@ -101,13 +93,25 @@ Provides:
 * Genre
 * Genre classification
 
-### Enriched Game–GPU Dataset
+### GPU Model Data
 
-The two datasets were joined to connect:
+Provides:
+
+* GPU model
+* GPU class
+* GPU series
+* VRAM
+* performance
+* launch year
+* launch MSRP
+* price-to-performance
+* availability
+
+The three datasets were joined to connect:
 
 **Game demand → recommended GPU → GPU performance → VRAM → price → value**
 
-This creates the analytical bridge between **what gamers play** and **what hardware they need**.
+This creates the analytical bridges between **what gamers play**, **what hardware they need** and **what GPU can we recommend to largest section of players**
 
 ---
 
@@ -287,14 +291,16 @@ The SQL analysis explicitly filters the latest GPU records to the $300–$499 se
 
 The qualifying products include GPUs such as:
 
-| GPU                  | Performance |  VRAM | Launch MSRP | Price / Performance |
-| -------------------- | ----------: | ----: | ----------: | ------------------: |
-| **RX 7600 XT**       |          75 | 16 GB |        $329 |               22.80 |
-| **RTX 5060 Ti**      |          85 | 16 GB |        $429 |               19.81 |
-| **RTX 4060 Ti 16GB** |          80 | 16 GB |        $499 |               16.03 |
-| **RX 7800 XT**       |          80 | 16 GB |        $499 |               16.03 |
-| **RX 6700 XT**       |          75 | 12 GB |        $479 |               15.66 |
-| **RX 6750 XT**       |          75 | 12 GB |        $499 |               15.03 |
+| Model            | Performance | VRAM | Launch MSRP | Price per Dollar | GPU Class | GPU Series |
+|------------------|------------:|-----:|------------:|-----------------:|-----------|------------|
+| **RX 7600 XT**   | 75 | 16 GB | $329 | 23.000 | Mid | R7000 |
+| **RX 9060 XT**   | 80 | 16 GB | $359 | 22.000 | Mid | R9000 |
+| **RTX 5060 Ti**  | 85 | 16 GB | $429 | 20.000 | Mid | GF50 |
+| **RX 9070 XT**   | 90 | 16 GB | $499 | 18.000 | Mid+ | R9000 |
+| **RX 7800 XT**   | 80 | 16 GB | $499 | 16.000 | Top | R7000 |
+| **RTX 4060 Ti**  | 80 | 16 GB | $499 | 16.000 | Mid | GF40 |
+| **RX 6700 XT**   | 75 | 12 GB | $479 | 16.000 | Mid+ | R6000 |
+| **RX 6750 XT**   | 75 | 12 GB | $499 | 15.000 | Mid+ | R6000 |
 
 This reveals an important product-market trade-off.
 
@@ -477,61 +483,188 @@ A recommendation that remains near the top under different weighting assumptions
 
 # 13. Final Recommendation
 
-## Primary Recommendation: Target the $300–$499 mainstream GPU segment
+The analysis does not identify one universally "best" GPU. Instead, the optimal product depends on the buyer's priority between **value, balanced capability, and performance headroom**.
 
-This is the strongest strategic price zone for the project because it combines:
+The candidate pool contains eight GPUs that satisfy the project's core requirements:
 
-1. **Meaningful existing GPU ownership**
-2. **Large mainstream gaming demand**
-3. **Sufficient product performance to meet modern Action-game requirements**
-4. **A realistic consumer budget**
-5. **Room for product differentiation through value, performance, and VRAM**
+- Launch MSRP: **$300–$499**
+- GPU Performance: **≥ 75**
+- VRAM: **≥ 12 GB**
+- Latest available GPU specification
+- Suitable for the modern Action-game requirement benchmark
+
+The resulting recommendation is therefore segmented into three buyer profiles.
+
+| Position | GPU | Performance | VRAM | Launch MSRP | Price/Performance | Fit Score |
+|---|---|---:|---:|---:|---:|---:|
+| **Best Value** | **RX 7600 XT** | 75 | 16 GB | $329 | 23 | **0.850** |
+| **Best Balanced** | **RX 9060 XT** | 80 | 16 GB | $359 | 22 | **0.771** |
+| **Best Performance** | **RX 9070 XT** | 90 | 16 GB | $499 | 18 | **0.969** |
 
 ---
 
-## Product Recommendation Framework
+## Best Value — RX 7600 XT
 
-### Best Value
+The **RX 7600 XT** is the strongest choice for a price-sensitive buyer.
+
+At a **$329 launch MSRP**, it is the least expensive GPU in the qualifying pool while still meeting the project's Action-game thresholds:
+
+- Performance = **75**
+- VRAM = **16 GB**
+- Price-to-performance = **23**
+
+Its **0.850 Value-focused Fit Score** demonstrates that its competitive advantage comes from delivering the required gaming capability at the lowest entry price.
+
+### Why it matters
+
+The RX 7600 XT represents the **accessibility end of the $300–$499 opportunity**.
+
+For a manufacturer targeting price-sensitive mainstream gamers, the proposition is straightforward:
+
+> **Meet the identified gaming requirement while minimizing the customer's upfront cost.**
+
+---
+
+## Best Balanced — RX 9060 XT
+
+The **RX 9060 XT** is the strongest overall fit for the project's mainstream positioning.
+
+It combines:
+
+- Performance = **80**
+- VRAM = **16 GB**
+- Launch MSRP = **$359**
+- Price-to-performance = **22**
+
+Most importantly, it occupies a compelling position between the two extremes.
+
+It provides **5 points of additional performance above the Action P75 threshold** while remaining only **$30 more expensive than the RX 7600 XT**.
+
+This makes it particularly attractive for the project's central objective:
+
+> **Deliver enough performance and VRAM for modern AAA gaming without pushing the consumer toward the top of the budget range.**
+
+### Why this is the overall recommendation
+
+The RX 9060 XT is not the cheapest qualifying GPU and it is not the fastest.
+
+That is precisely why it is the strongest **balanced** recommendation.
+
+It sits in the middle of the performance/value trade-off:
+
+**RX 7600 XT → lower cost / lower performance**
+
+**RX 9060 XT → moderate cost / higher performance**
+
+**RX 9070 XT → maximum performance / maximum budget**
+
+For the mainstream customer the project is targeting, the RX 9060 XT provides the most compelling compromise between these objectives.
+
+---
+
+## Best Performance — RX 9070 XT
+
+The **RX 9070 XT** is the performance leader within the target price segment.
+
+Its specifications are:
+
+- Performance = **90**
+- VRAM = **16 GB**
+- Launch MSRP = **$499**
+- Price-to-performance = **18**
+- Performance-focused Fit Score = **0.969**
+
+Its performance is substantially above the Action-game P75 threshold of 75.
+
+It also provides the highest performance score among the qualifying GPUs while remaining within the project's **$300–$499 price ceiling**.
+
+### Why it matters
+
+The RX 9070 XT represents the **upper boundary of the mainstream opportunity**.
+
+It is appropriate for customers who are willing to spend the full budget in exchange for additional performance headroom.
+
+Its positioning is therefore different from the RX 7600 XT:
+
+> **RX 7600 XT sells affordability.**
+
+> **RX 9070 XT sells performance headroom.**
+
+---
+
+# 14. Overall Recommendation
+
+## **RX 9060 XT — Best Balanced Mainstream Recommendation**
+
+For the specific objective of this project, the **RX 9060 XT is the strongest overall recommendation**.
+
+The reason is not that it has the highest Fit Score under every weighting scenario. It does not.
+
+Instead, it provides the strongest **market-positioning balance**:
+
+- **$359** launch MSRP keeps it comfortably within the $300–$499 target segment.
+- **16 GB VRAM** exceeds the practical P75 VRAM threshold of approximately 12 GB.
+- **80 performance** exceeds the Action-game P75 performance threshold of 75.
+- **Price-to-performance of 22** remains close to the value leader at 23.
+- It provides additional performance headroom over the RX 7600 XT without requiring the full $499 budget of the RX 9070 XT.
+
+This makes it the best representation of the project's central proposition:
+
+> **A mainstream GPU should not simply meet the minimum requirement—it should provide meaningful performance and VRAM headroom while remaining accessible to the largest practical customer segment.**
+
+---
+
+# 15. Product Positioning Strategy
+
+The analysis therefore supports a three-tier marketing strategy within the $300–$499 segment:
+
+### $300–$399 — Accessible AAA Gaming
 
 **RX 7600 XT**
 
-Why:
+Position around:
 
-* Meets the Action P75 performance threshold
-* Provides 16 GB VRAM
-* Lowest launch MSRP among the qualifying candidates
-* Strongest price-to-performance position among the shortlisted GPUs
+- affordability
+- 16 GB VRAM
+- meeting modern game requirements
+- maximum value
 
-**Best suited to:** buyers prioritizing affordability and value.
-
----
-
-### Best Balanced Candidate
-
-**RTX 5060 Ti 16GB**
-
-Why:
-
-* Performance score of **85**, substantially above the Action P75 threshold of 75
-* 16 GB VRAM exceeds the practical 12 GB requirement
-* $429 launch MSRP remains inside the target $300–$499 segment
-* Provides significantly more performance headroom than the minimum qualifying products
-
-**Best suited to:** mainstream buyers wanting a balance between current capability, VRAM, performance headroom, and budget.
+**Target customer:** budget-conscious gamer.
 
 ---
 
-### Performance-Oriented Candidate
+### $350–$450 — Mainstream Sweet Spot
 
-**RTX 5060 Ti 16GB**
+**RX 9060 XT**
 
-The same product remains particularly attractive from a performance perspective because its performance score reaches **85**, equal to the maximum observed Action-game requirement in the filtered dataset.
+Position around:
 
-This makes it a strong candidate for buyers who want additional headroom rather than simply meeting the P75 threshold.
+- balanced performance
+- 16 GB VRAM
+- strong price efficiency
+- additional performance headroom
+- next-generation AAA readiness
+
+**Target customer:** mainstream gamer seeking the best overall balance.
 
 ---
 
-# 14. Strategic Conclusion
+### $450–$499 — Maximum Performance Within the Segment
+
+**RX 9070 XT**
+
+Position around:
+
+- maximum performance
+- 16 GB VRAM
+- performance headroom
+- premium experience without entering the high-end price tier
+
+**Target customer:** performance-focused gamer willing to spend the full budget.
+
+---
+
+# 16. Strategic Conclusion
 
 The central finding of the project is not that gamers need the most expensive GPU.
 
@@ -564,7 +697,7 @@ This creates a product-positioning framework for a GPU that can serve today's ma
 
 ---
 
-# 15. Analytical Workflow
+# 17. Analytical Workflow
 
 ```text
                     BUSINESS QUESTION
@@ -615,7 +748,7 @@ This creates a product-positioning framework for a GPU that can serve today's ma
 
 ---
 
-# 16. Tools & Responsibilities
+# 18. Tools & Responsibilities
 
 | Tool                     | Role                                                                                   |
 | ------------------------ | -------------------------------------------------------------------------------------- |
@@ -629,7 +762,7 @@ SQL and Python implementation are maintained separately in the project files rat
 
 ---
 
-# 17. Evidence & Deep Dives
+# 19. Evidence & Deep Dives
 
 The conclusions above are supported by the project's analytical artifacts.
 
