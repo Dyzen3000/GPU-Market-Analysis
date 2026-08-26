@@ -60,7 +60,7 @@ The project uses a small set of metrics that connect market demand to product fi
 | **GPU_Performance**         | Defines the performance level required to run the game smoothly                   |
 
 
-Later in the analysis, the P75 of GPU_Performance and VRAM is used for the main recommendation.
+Later in the analysis, the P75 of GPU_Performance is used for the main recommendation.
 
 This avoids allowing a small number of extreme titles to determine the hardware recommendation while still targeting the demanding upper portion of the market.
 
