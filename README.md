@@ -1,12 +1,12 @@
 # The $500 GPU Sweet Spot: Ready for GTA VI?
 
-### A data-driven GPU **market** and gaming-demand analysis to identify the best-value hardware for mainstream gamers
+### A data-driven GPU market and gaming-demand analysis to identify the best-value hardware for mainstream gamers
 
 ---
 
 ## Executive Summary
 
-The PC gaming GPU market presents a practical product-positioning question:
+The PC gaming GPU market presents a **practical** product-positioning question:
 
  >**Which GPUs should manufacturers and gamers focus on if the goal is to serve the largest mainstream gaming audience while providing enough performance and VRAM for modern AAA games—and prepare for a future flagship title such as GTA VI?**
 
