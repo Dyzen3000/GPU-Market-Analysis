@@ -1,6 +1,6 @@
 # The $500 GPU Sweet Spot: Ready for GTA VI?
 
-### A data-driven GPU *market* and gaming-demand analysis to identify the best-value hardware for mainstream gamers
+### A data-driven GPU **market** and gaming-demand analysis to identify the best-value hardware for mainstream gamers
 
 ---
 
