@@ -14,7 +14,7 @@ This project connects **GPU ownership, GPU pricing, game popularity, game genres
 
 Rather than treating GPU performance in isolation, the analysis follows the customer journey:
 
-**What GPUs do people own? → What games do they play? → What hardware do those games require? → Which GPUs satisfy those requirements? → Which products offer the strongest value?**
+**Which GPUs are the most popular? → What games type is the most popular? → What hardware do those games require? → Which GPUs satisfy those requirements? → Which GPUs price point is most popular? → Which GPU can offer best Value in that price point?**
 
 The final recommendation focuses on GPUs within the **$300–$499 launch-MSRP segment**, evaluated against the requirements of the most relevant modern gaming genres and using **performance, VRAM, and price-to-performance** as the core decision criteria.
 
