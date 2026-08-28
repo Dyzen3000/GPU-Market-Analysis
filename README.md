@@ -24,7 +24,7 @@ The final recommendation focuses on GPUs within the **$300–$499 launch-MSRP se
 
 # 1. Business Questions
 
-The analysis was designed around the decisions different stakeholders would need to make.
+The **analysis** was designed around the decisions different stakeholders would need to make.
 
 ### Product / GPU Marketing
 
