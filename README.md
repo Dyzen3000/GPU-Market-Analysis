@@ -8,7 +8,7 @@
 
 The PC gaming GPU market presents a practical product-positioning question:
 
-> **Which GPUs should manufacturers and gamers focus on if the goal is to serve the largest mainstream gaming audience while providing enough performance and VRAM for modern AAA games—and prepare for a future flagship title such as GTA VI?**
+ **Which GPUs should manufacturers and gamers focus on if the goal is to serve the largest mainstream gaming audience while providing enough performance and VRAM for modern AAA games—and prepare for a future flagship title such as GTA VI?**
 
 This project connects **GPU ownership, GPU pricing, game popularity, game genres, hardware requirements, performance, VRAM, and price efficiency** to answer that question.
 
