@@ -8,7 +8,7 @@
 
 The PC gaming GPU market presents a practical product-positioning question:
 
- >**Which GPUs should manufacturers and gamers focus on if the goal is to serve the largest mainstream gaming audience while providing enough performance and VRAM for modern AAA games—and prepare for a future flagship title such as GTA VI?**
+ >**Which GPUs should manufacturers and gamers focus on if the goal is to serve the largest mainstream gaming audience while providing enough performance and VRAM for modern AAA games and prepare for a future flagship title such as GTA VI?**
 
 This project connects **GPU ownership, GPU pricing, game popularity, game genres, hardware requirements, performance, VRAM, and price efficiency** to answer that question.
 
@@ -40,7 +40,7 @@ The analysis was designed around the decisions different stakeholders would need
 
 ### Consumer / Buyer
 
-> **Within a realistic $300–$499 budget, which GPUs provide the strongest combination of performance, VRAM, and price efficiency for modern AAA gaming?**
+> **Within a realistic $200–$599 budget, which GPUs provide the strongest combination of performance, VRAM, and price efficiency for modern AAA gaming?**
 
 ### Strategic / Future-Facing
 
@@ -55,9 +55,9 @@ The project uses a small set of metrics that connect market demand to product fi
 | North Star Metric           | Why it matters                                                                    |
 |-----------------------------|------------------------------------------------------------------------------------|
 | **GPU Ownership Share (%)** | Measures the size of the existing hardware market                                 |
-| **Rec_GPU**                 | The GPU recommended by the game developer                                         |
+| **Recommended GPU**         | The GPU recommended by the game developer                                         |
 | **Peak CCU**                | Measures the number of active players in-game                                     |
-| **GPU_Performance**         | Defines the performance level required to run the game smoothly                   |
+| **GPU Performance**         | Defines the performance level required to run the game smoothly                   |
 
 
 Later in the analysis, the P75 of GPU_Performance is used for the main recommendation.
