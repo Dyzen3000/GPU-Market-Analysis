@@ -171,12 +171,15 @@ The first question is not "Which GPU is fastest?"
 It is:
 
 > **Where is the existing customer base?**
+
 <img width="653" height="366" alt="Screenshot 2026-08-27 002706" src="https://github.com/user-attachments/assets/5878dc02-0dbf-4a95-8765-2f9e75012335" />
 
 The latest SHS snapshot shows that GPU ownership is concentrated in the mainstream market rather than at the high end.
+
 <img width="654" height="367" alt="GPU_price segments" src="https://github.com/user-attachments/assets/c6b55865-6c1f-4268-ba54-bcbb9ceda304" />
 
 Within the Mid and Mid+ classes, the **$300–$399 launch-price band** is the largest individual bracket, with approximately **24.82% combined GPU ownership share** in the latest snapshot.
+
 <img width="654" height="368" alt="GPU_price segments" src="https://github.com/user-attachments/assets/fd0c4d78-3997-42e1-9dba-7ef705753fd6" />
 
 The adjacent **$400–$499 segment contributes another 19.62%**, giving the broader $300–$499 range a substantial mainstream installed base.
@@ -198,6 +201,7 @@ This makes the $300–$499 range the project's primary product-positioning zone.
 # 7. Where Is the Gaming Demand?
 
 The next step is to identify the genres generating the largest player audiences.
+
 <img width="653" height="368" alt="App_ID num" src="https://github.com/user-attachments/assets/e5851eb6-b669-4123-b3a1-523eb4dc0f92" />
 <img width="652" height="366" alt="Player num" src="https://github.com/user-attachments/assets/1a27fa00-521f-4c40-adc3-91df64067dfb" />
 
@@ -220,6 +224,7 @@ Its player demand is substantially larger than Adventure or RPG in this dataset.
 That makes Action the most important genre for the hardware recommendation:
 
 > **A GPU positioned for the mainstream gaming market should be capable of serving the hardware requirements of modern Action titles.**
+
 <img width="237" height="365" alt="Latest Gpu_perf_VRAM" src="https://github.com/user-attachments/assets/6ca5a8e7-5fbf-4633-99ea-e4ff66d634e2" />
 
 This is also why GTA VI is an appropriate strategic use case for the project: the game is being treated as a future flagship Action title rather than as the source of the measured hardware requirement.
@@ -233,6 +238,7 @@ The analysis then moves from player demand to hardware requirements.
 For modern games released between 2023 and 2025, only Mid through Top+ recommended GPU classes and GPUs launched from 2018 onward were retained.
 
 For Action games specifically, the resulting hardware requirement distribution produces:
+
 <img width="653" height="365" alt="Series" src="https://github.com/user-attachments/assets/99075ca5-fb65-45fa-b621-392a9b3ee959" />
 
 ### Performance
@@ -367,14 +373,17 @@ This framework is implemented in Python as a sensitivity analysis rather than be
 
 ## Insight 1 — The rising cost of GPUs and corresponding performance requirements for new games
 
-The ownership data points toward people moving away from lower end sub $299 GPUs towards **$300–$399** range as the lower end cards of the new generation can't run modern games and haven't been updated like the Mid and Mid+ cards above them. The VRAM required to run the games is also not met by most of them. 
+The ownership data points toward people moving away from lower end sub $299 GPUs towards **$300–$399** range as the lower end cards of the new generation can't run modern games and haven't been updated like the Mid and Mid+ cards above them. The VRAM required to run the games is also not met by most of them.
+
 <img width="351" height="181" alt="GPU_VRAM Corealation" src="https://github.com/user-attachments/assets/3669fad9-edb0-4d9b-85a6-80d025cae46d" />
 
 
 GPUs are themselves getting more pricy due to VRAM shortages and low margins on lower end cards vs higher end cards.
+
 <img width="527" height="232" alt="GPU_MSRP" src="https://github.com/user-attachments/assets/34ea8ad6-d160-4752-bd7c-55bdb2ae00f6" />
 
 And finally games too are becoming more taxing to run year by year.
+
 <img width="654" height="328" alt="GPU_Perf creep" src="https://github.com/user-attachments/assets/2b81d595-9b8d-45d4-9290-5c5638a39f21" />
 
 ### Business value
@@ -442,6 +451,7 @@ This supports a **mainstream-performance strategy rather than an enthusiast-only
 ---
 
 ## Insight 5 — VRAM is the constraint that changes the shortlist
+
 <img width="351" height="181" alt="GPU_VRAM Corealation" src="https://github.com/user-attachments/assets/7baa784c-22b1-44d6-979e-c17e4f912b9b" />
 
 The Action-game P75 VRAM requirement is **10.75 GB**, effectively creating a **12 GB practical threshold**.
